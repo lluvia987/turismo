@@ -478,6 +478,7 @@ img { display: block; width: 100%; }
   text-transform: uppercase;
   margin-bottom: 0.3rem;
 }
+
 .exp-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
 /* ── PRACTICAL ── */
@@ -643,6 +644,10 @@ img { display: block; width: 100%; }
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1rem;
+}
+
+.footer span {
+  color: var(--gold);
 }
 .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }

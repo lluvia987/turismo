@@ -7,7 +7,7 @@ export default function Destinations() {
     <section className="section destinations" id="destinos">
       <div className="section-header">
         <p className="section-eyebrow">NUESTROS SERVICIOS</p>
-        <h2 className="section-title">Joyas del <em>Tahuantinsuyo</em></h2>
+        <h2 className="section-title">Experiencias <em>Ofrecidass</em></h2>
         <p className="section-sub">Cada lugar es un capítulo de la historia más grande de América del Sur.</p>
       </div>
       <div className="dest-grid">

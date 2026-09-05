@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <span className="brand-icon">◈</span>
-          <span className="brand-text">CUSCO ETERNO</span>
+          <span className="brand-text">WIÑAY AWAQ</span>
           <p>Tu guía de confianza en la capital arqueológica de América.</p>
         </div>
         <div className="footer-links">
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2024 Cusco Eterno. Todos los derechos reservados. Hecho con amor en el Cusco.</p>
+        <p>© 2024 Wiñay Awaq. Todos los derechos reservados. Hecho con amor en el Cusco.</p>
         <p className="footer-quechua"><em>Allin p'unchay, allin tuta.</em> — Que tengas un buen día y buena noche.</p>
       </div>
     </footer>

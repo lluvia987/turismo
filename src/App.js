@@ -7,8 +7,8 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Destinations from './pages/Destinations';
-import Experiences from './pages/Experiences';
-import PracticalInfo from './pages/PracticalInfo';
+import Experiences from './pages/Services';
+import PracticalInfo from './pages/Products';
 import Contact from './pages/Contact';
 
 export default function App() {

@@ -20,10 +20,10 @@ export default function Contact() {
             para ti. Sin fórmulas. Sin tours genéricos.
           </p>
           <div className="contact-info">
-            <div className="info-item">📍 Calle Triunfo 392, Cusco, Perú</div>
-            <div className="info-item">📞 +51 84 123 456</div>
-            <div className="info-item">✉️ hola@cuscoeterno.pe</div>
-            <div className="info-item">🕐 Lun–Sab: 8am – 7pm</div>
+            <div className="info-item">📍 Calle Albergue S/N - Chinchero</div>
+            <div className="info-item">📞 +51 930675547</div>
+            <div className="info-item">✉️ winayawaq2008@gmail.com</div>
+            <div className="info-item">🕐 Lun–Dom: 7am – 7pm</div>
           </div>
         </div>
         <div className="contact-right">

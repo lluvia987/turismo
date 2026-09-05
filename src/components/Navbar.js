@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 const navItems = [
   { label: 'Inicio', to: '/' },
-  { label: 'Destinos', to: '/destinos' },
-  { label: 'Experiencias', to: '/experiencias' },
-  { label: 'Practica', to: '/practica' },
+  { label: 'Experiencias', to: '/destinos' },
+  { label: 'Servicios', to: '/experiencias' },
+  { label: 'Productos', to: '/practica' },
   { label: 'Contacto', to: '/contacto', cta: true },
 ];
 
