@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { experiences } from '../data/content';
+import { servicios } from '../data/content';
 
-export default function Experiences() {
+export default function Services() {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Experiences() {
           <Link to="/contacto" className="btn-primary" style={{ marginTop: '2rem' }}>Planifica tu Visita</Link>
         </div>
         <div className="exp-right exp-grid">
-          {experiences.map((e, i) => (
+          {servicios.map((e, i) => (
             <div
               key={i}
               className={`exp-item ${visible ? 'visible' : ''}`}

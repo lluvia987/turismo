@@ -6,9 +6,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import Destinations from './pages/Destinations';
-import Experiences from './pages/Services';
-import PracticalInfo from './pages/Products';
+import Experiencias from './pages/Experiences';
+import Servicios from './pages/Services';
+import Productos from './pages/Products';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -25,9 +25,9 @@ export default function App() {
       <Navbar scrolled={scrolled} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/destinos" element={<Destinations />} />
-        <Route path="/experiencias" element={<Experiences />} />
-        <Route path="/practica" element={<PracticalInfo />} />
+        <Route path="/destinos" element={<Experiencias />} />
+        <Route path="/experiencias" element={<Servicios />} />
+        <Route path="/productos" element={<Productos />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
       <Footer />

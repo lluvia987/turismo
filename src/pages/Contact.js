@@ -1,14 +1,42 @@
 import React, { useState } from 'react';
 import { destinations } from '../data/content';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', destination: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', destination: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | loading | sent | error
+
   const handle = e => setForm({ ...form, [e.target.name]: e.target.value });
-  const submit = e => {
+
+  const submit = async e => {
     e.preventDefault();
-    setSent(true);
+    setStatus('loading');
+
+    try {
+      const res = await fetch(`https://turimo-backend.vercel.app/api/contacto`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: form.name,
+          email: form.email,
+          numero: form.phone,
+          interes: form.destination,
+          mensaje: form.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) throw new Error(data.mensaje || 'Error al enviar');
+
+      setStatus('sent');
+    } catch (err) {
+      console.error('Error enviando consulta:', err);
+      setStatus('error');
+    }
   };
+
   return (
     <section className="section contact" id="contacto">
       <div className="contact-layout">
@@ -27,7 +55,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="contact-right">
-          {sent ? (
+          {status === 'sent' ? (
             <div className="sent-msg">
               <span>◈</span>
               <h3>¡Mensaje Enviado!</h3>
@@ -46,6 +74,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="form-group">
+                <label>Teléfono</label>
+                <input type="tel" name="phone" value={form.phone} onChange={handle} placeholder="+51 999 999 999" required />
+              </div>
+              <div className="form-group">
                 <label>Destino de Interés</label>
                 <select name="destination" value={form.destination} onChange={handle} required>
                   <option value="">Selecciona un destino</option>
@@ -57,7 +89,12 @@ export default function Contact() {
                 <label>Cuéntanos tu viaje</label>
                 <textarea name="message" value={form.message} onChange={handle} placeholder="Fechas, número de personas, intereses especiales..." rows={4} required />
               </div>
-              <button type="submit" className="btn-primary full">Enviar Consulta →</button>
+              <button type="submit" className="btn-primary full" disabled={status === 'loading'}>
+                {status === 'loading' ? 'Enviando...' : 'Enviar Consulta →'}
+              </button>
+              {status === 'error' && (
+                <p className="form-error">No pudimos enviar tu mensaje. Intenta de nuevo o contáctanos por WhatsApp.</p>
+              )}
             </form>
           )}
         </div>

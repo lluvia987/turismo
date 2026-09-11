@@ -2,12 +2,12 @@ import React from 'react';
 import DestinationCard from '../components/DestinationCard';
 import { destinations } from '../data/content';
 
-export default function Destinations() {
+export default function Experiences() {
   return (
     <section className="section destinations" id="destinos">
       <div className="section-header">
         <p className="section-eyebrow">NUESTROS SERVICIOS</p>
-        <h2 className="section-title">Experiencias <em>Ofrecidass</em></h2>
+        <h2 className="section-title">Experiencias <em>Ofrecidas</em></h2>
         <p className="section-sub">Cada lugar es un capítulo de la historia más grande de América del Sur.</p>
       </div>
       <div className="dest-grid">
