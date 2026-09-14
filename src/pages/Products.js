@@ -2,18 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { products } from '../data/content';
 
 export default function PracticalInfo() {
-  const seasons = [
+  /*const seasons = [
     { name: 'Temporada Seca', months: 'Abr – Oct', ideal: true, desc: 'La mejor época. Días soleados, noches frías, ideal para trekking y Machu Picchu.' },
     { name: 'Temporada Lluvia', months: 'Nov – Mar', ideal: false, desc: 'Verde intenso, menos turistas. Camino Inca cerrado en febrero.' },
-  ];
-  const tips = [
+  ];*/
+  /*const tips = [
     { icon: '🌬️', tip: 'Soroche (mal de altura): llega 1–2 días antes y bebe mate de coca.' },
     { icon: '🧥', tip: 'Viste en capas. Puede hacer 20°C al mediodía y 5°C en la noche.' },
     { icon: '💧', tip: 'Bebe al menos 3 litros de agua al día.' },
     { icon: '🎫', tip: 'El Boleto Turístico cubre 16 sitios. Compra con anticipación.' },
     { icon: '📱', tip: 'Movistar tiene mejor cobertura en zonas rurales.' },
     { icon: '💵', tip: 'Lleva soles en efectivo. Las zonas arqueológicas no aceptan tarjeta.' },
-  ];
+  ];*/
 
   const [productsVisible, setProductsVisible] = useState(false);
   const [hoveredProduct, setHoveredProduct] = useState(null);
@@ -75,11 +75,11 @@ export default function PracticalInfo() {
       </div>
 
       <div className="section-header">
-        <p className="section-eyebrow">INFORMACIÓN PRÁCTICA</p>
-        <h2 className="section-title">Antes de <em>Viajar</em></h2>
+        <p className="section-eyebrow">Opciones Económicas</p>
+        <h2 className="section-title">Productos en <em>Oferta</em></h2>
       </div>  
-        
-      <div className="practical-grid">
+      {/*
+       <div className="practical-grid">
         <div className="practical-card seasons">
           <h3>¿Cuándo ir?</h3>
           {seasons.map((s, i) => (
@@ -130,7 +130,11 @@ export default function PracticalInfo() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */
+      }  
+      
     </section>
+
+    
   );
 }

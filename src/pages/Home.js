@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import CategoryCards from '../components/CategoryCard';
+import { materials } from '../data/content';
 
 const stats = [
   { value: '18+', label: 'Años de Experiencia' },
@@ -26,6 +28,7 @@ export default function Home() {
     if (aboutRef.current) obs.observe(aboutRef.current);
     return () => obs.disconnect();
   }, []);
+
 
   return (
     <>
@@ -74,7 +77,40 @@ export default function Home() {
         
       </section>
 
+      <section className='container home-section'>
+        <div className={`section-head ${statsVisible ? 'visible' : ''}`}>
+          <p className='section-tag'>
+            
+            Colecciones
+          </p>  
+          <h2>
+            Encuentra una prenda ideal para ti
+          </h2>
+          <p>
+            Ofrecemos una variedad de productos elaborados con distintos materiales, estilos y acabados, pensados para adaptarse a cada persona, su estilo de vida y cada ocasión.
+
+          </p>
+        </div>
+        <CategoryCards />
+        <div className="category-cta">
+          <Link to="/productos" className="btn-primary">Ver Todos</Link>
+        </div>
+
+      </section>
+
       <section className={`container storytelling-section ${aboutVisible ? 'visible' : ''}`} ref={aboutRef}>
+        <div className={`section-head ${statsVisible ? 'visible' : ''}`}>
+          <p className='section-tag'>
+            Conocenos
+          </p>  
+          <h2>
+            Conoce un poco de nuestra historia
+          </h2>
+          <p>
+            Centro Cultural y  artesanal Wiñay Awaq desde el 2008 tejiendo historia.
+
+          </p>
+        </div>
         <div className='storytelling-inner'>
           <div
             className={`storytelling-wrap`}
@@ -92,23 +128,42 @@ export default function Home() {
           <div className="about-content">
             <p className="about-eyebrow">NUESTRA HISTORIA</p>
             <h2 className="about-title">
-              Guardianes de la <span className="accent">Tradición</span> Andina
+              Centro <span className="accent">Textil </span> Wiñay<span className="accent"> Awaq </span>
             </h2>
-            <p className="about-text">
-              Desde hace más de 18 años, guiamos a viajeros de todo el mundo por los
-              caminos ancestrales del Tahuantinsuyo. Cada ruta que ofrecemos nace del
-              respeto por la cultura andina y el deseo de compartir experiencias
-              auténticas, lejos del turismo masivo.
-            </p>
-            <p className="about-text">
-              Somos un equipo local, apasionado por nuestras raíces, comprometido con
-              un turismo responsable que beneficia a las comunidades que nos reciben.
-            </p>
+            <p className="about-text"> Desde hace más de 18 años, servimos a viajeros de todo el mundo, brindándoles la oportunidad de conocer y vivir en primera persona la cultura ancestral del Valle Sagrado. Cada uno de nuestros servicios nace del respeto por la cultura andina, sus tradiciones y del deseo de compartir con nuestros visitantes el legado ancestral que hace de esta tierra un lugar único. </p> 
+            <p className="about-text"> Somos una organización apasionada por compartir un pedacito de nuestras raíces, comprometida siempre con un turismo responsable con la naturaleza y con las personas que hacen posible que cada experiencia sea auténtica y especial. </p>
             <Link to="/nosotros" className="btn-ghost">Conócenos Más</Link>
           </div>
           
         </div>
         
+      </section>
+      <section className='container materials'>
+        <div className={`section-head ${statsVisible ? 'visible' : ''}`}>
+          <p className='section-tag'>
+            Materiales
+          </p>  
+          <h2>
+            Lineas textiles disponibles
+          </h2>
+          <p>
+            Contamos con Productos elaborados en distintos materiales siendo la alpaca nuestro MVP
+
+          </p>
+        </div>
+        <div className='material-grid' data-stagger-step="70">
+          {materials.map((m)=>(
+            <a className='material-card' href='/productos'>
+              <span className='material-card-name'>
+                {m.name}
+              </span>
+              <span className='material-card-desc'>
+                {m.description}
+              </span>
+            </a>
+          ))}
+
+        </div>
       </section>
     </>
   );

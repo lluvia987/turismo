@@ -20,7 +20,7 @@ export const destinations = [
     description: 'Conoce el arte textil andino y descubre de cerca las técnicas tradicionales de tejido, los materiales naturales y los diseños que representan la identidad y herencia cultural de nuestras comunidades.',
     duration: '2-3 horas',
     difficulty: 'Más Solicitado',
-    image: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/793802912_1392201669792668_7375699487937080090_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeH0KYkuF3LK5dgQY7WqyCyRg1UxSAO7Xj6DVTFIA7tePodVLpUMsf25Lf-8uN5KVj88pnQUfyD35tfIMze6_Ry1&_nc_ohc=TIM6hg0BnfQQ7kNvwEquQFQ&_nc_oc=Ado7iPCVhtE35yWdB1X8CqHUiU73UASllwqUS2dHwxZHgybD-nkmAXgjvCUsVMsUAGg&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=275hYA_cRIBUgi9FzGC7yw&_nc_ss=7b2a8&oh=00_AQLOzjSkqiQwpIq90yEuRhCLMGDV5A_0_wTPqqBKUOCM7g&oe=6AA252BE',
+    image: 'https://www.inkayniperutours.com/blog/wp-content/uploads/Women-weavers-in-Chinchero-Inkayni-Peru-Tours.webp',
     color: '#1a3d4a',
   },
   {
@@ -109,6 +109,8 @@ export const products = [
     tagColor: '#7a2d00',
     description: 'Tejido en telar tradicional con fibra de alpaca 100% natural. Cada pieza lleva patrones geométricos propios de nuestra comunidad, únicos e irrepetibles.',
     material: 'Alpaca 100%',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
     image: 'https://www.realcuscotour.com/wp-content/uploads/2025/09/mujeres-chincheros-05-1024x1003.jpg',
   },
   {
@@ -119,6 +121,8 @@ export const products = [
     tagColor: '#1a5c3a',
     description: 'Manta grande tejida a mano con lana de oveja teñida con tintes naturales extraídos de plantas y minerales de la región.',
     material: 'Lana de oveja',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
     image: 'https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/800642788_1396117289401106_7904238230142556189_n.jpg?stp=dst-jpg_tt6&cstp=mx1152x864&ctp=s1152x864&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sLrc1YDSAB4Q7kNvwGPmtQr&_nc_oc=Adq0IqVOboajT21-sP3tqPn8zaEHIz-9j2AsnlaxO2clKHBxzahwWppoiRBn61J5Hcc&_nc_zt=23&_nc_ht=scontent.flim14-1.fna&_nc_gid=tGowuWdtMIOv5kgvSFH8aw&_nc_ss=7b2a8&oh=00_AQI5OZQNOUDsyhar6MUm5v0ym7aXRN7k_zF3y1NP_9LoWA&oe=6AA72305',
   },
   {
@@ -129,6 +133,8 @@ export const products = [
     tagColor: '#5a3600',
     description: 'Vasija ceremonial inspirada en piezas arqueológicas originales, moldeada y pintada a mano por artesanos locales siguiendo técnicas de mil años de antigüedad.',
     material: 'Arcilla natural',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KY6sr85R8wSTpsRvqA6NS280CghpOa8sfdn33EVKEg&s=10',
   },
   {
@@ -139,7 +145,9 @@ export const products = [
     tagColor: '#4a0a2d',
     description: 'Aretes y collares trabajados en plata 950 con motivos incas, filigrana fina hecha por plateros cusqueños de tradición familiar.',
     material: 'Plata 950',
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/50/36/8f/img-20190427-wa0052-largejpg.jpg?w=900&h=-1&s=1',
   },
   {
     id: 5,
@@ -149,6 +157,8 @@ export const products = [
     tagColor: '#0a4a5c',
     description: 'Gorro tejido con orejeras, ideal para el frío de la altura. Colores vivos y diseños que representan la cosmovisión andina.',
     material: 'Lana de alpaca',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
     image: 'https://media.istockphoto.com/id/896311326/es/foto/tejidos-telares-de-mano-tradicionales-de-quechua.jpg?s=170667a&w=0&k=20&c=MHgeLDbT6PScrand0b9uXRwkXtX7Q7cR8HTszKJ-ZwU=',
   },
   {
@@ -159,6 +169,8 @@ export const products = [
     tagColor: '#2d4a22',
     description: 'Tapiz mural tejido con la técnica de los cuatro suyos, perfecto para decorar espacios con una pieza cargada de historia y simbolismo.',
     material: 'Lana teñida a mano',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/d4/2e/21/caption.jpg?w=1200&h=-1&s=1',
   },
     {
@@ -169,7 +181,9 @@ export const products = [
     tagColor: '#6b3f2a',
     description: 'Pintura inspirada en los paisajes de los Andes, con montañas, campos y colores tradicionales que representan la riqueza cultural de la región.',
     material: 'Óleo sobre lienzo',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
+    image: 'https://ryanfoxpainting.com/cdn/shop/products/il_fullxfull.881710385_b84k.jpg?v=1756311071',
   },
   {
     id: 9,
@@ -179,7 +193,9 @@ export const products = [
     tagColor: '#8a5a2b',
     description: 'Chompa tejida a mano con diseños geométricos inspirados en la iconografía andina. Una prenda cálida y representativa de nuestra tradición.',
     material: 'Lana de alpaca',
-    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&q=80',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW-AkBRiwo0Fkx8RVckm6HWd5OmvOztBiLAlIZPc2Gcg&s=10',
   },
     {
     id: 11,
@@ -189,6 +205,46 @@ export const products = [
     tagColor: '#2d4a22',
     description: 'Bolso tejido con motivos geométricos tradicionales andinos, ideal para complementar un estilo cotidiano con un toque cultural.',
     material: 'Lana y algodón',
-    image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?w=800&q=80',
+    fabrication: 'Telar Tradicional',
+    category: 'Ponchos',
+    image: 'https://images1.novica.net/pictures/4/p402922_2_400.jpg',
+  },
+];
+export const materials = [
+  {
+    id: 1,
+    name: 'Alpaca',
+    description: 'Suave, cálida y de calidad reconocida mundialmente.',
+    slug: 'alpaca',
+  },
+  {
+    id: 2,
+    name: 'Baby Alpaca',
+    description: 'La fibra más fina y sedosa, para prendas de lujo.',
+    slug: 'baby-alpaca',
+  },
+  {
+    id: 3,
+    name: 'Lana de Oveja',
+    description: 'Resistente y abrigadora, ideal para el uso diario.',
+    slug: 'lana-oveja',
+  },
+  {
+    id: 4,
+    name: 'Algodón Pima',
+    description: 'Ligero y transpirable. Perfecto para climas templados.',
+    slug: 'algodon-pima',
+  },
+  {
+    id: 5,
+    name: 'Vicuña',
+    description: 'Fibra exclusiva y excepcionalmente suave, edición limitada.',
+    slug: 'vicuna',
+  },
+  {
+    id: 6,
+    name: 'Llama',
+    description: 'Textura rústica con acabado artesanal auténtico.',
+    slug: 'llama',
   },
 ];
