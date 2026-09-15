@@ -78,13 +78,13 @@ export const servicios = [
     icon: '🏔️',
     title: 'Turismo Vivencial',
     desc: 'Visitas a centros arqueologicos y caminatas',
-    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80',
+    image: '/service01.jpg',
   },
   {
     icon: '🍽️',
     title: 'Gastronomía Andina',
     desc: 'Almuerzo tipo merienda con la comida tradicional de Cusco',
-    image: 'https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=800&q=80',
+    image: '/service03.jpeg',
   },
   {
     icon: '🎭',
@@ -96,7 +96,7 @@ export const servicios = [
     icon: '🏺',
     title: 'Visitas Guiadas',
     desc: 'Exposición del proceso de tejido en vivo ',
-    image: 'https://images.unsplash.com/photo-1590422749897-47cd0642b3b8?w=800&q=80',
+    image: '/service04.jpg',
   },
 ];
 
