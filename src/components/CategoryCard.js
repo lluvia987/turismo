@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/content';
+import { BASE_URL_PRODUCTOS } from '../config/cloudinary';
 
 const CARDS_PER_VIEW = 4;
 const ROTATE_INTERVAL = 5000; // 5 segundos, ajusta a tu gusto
@@ -39,7 +40,7 @@ export default function CategoryCards() {
       {visibleProducts.map((p) => (
         <div key={p.id} className="product-card">
           <div className="product-image-wrap">
-            <img src={p.image} alt={p.name} className="product-img" />
+            <img src={`${BASE_URL_PRODUCTOS}${p.image}`} alt={p.name} className="product-img" />
             <div className="product-gradient" />
           </div>
           <div className="product-body">

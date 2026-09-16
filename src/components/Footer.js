@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from 'react-icons/fa';
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaTiktok,
+  FaFacebookF
+} from 'react-icons/fa';
 import { destinations } from '../data/content';
 
 const WHATSAPP_NUMBER = '51930675547';
@@ -11,6 +16,10 @@ const WHATSAPP_MESSAGE =
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
 )}`;
+
+const INSTAGRAM_LINK = 'https://instagram.com/tu_usuario';
+const TIKTOK_LINK = 'https://tiktok.com/@tu_usuario';
+const FACEBOOK_LINK = 'https://facebook.com/tu_pagina';
 
 export default function Footer() {
   return (
@@ -30,16 +39,54 @@ export default function Footer() {
             Tu guía de confianza en la capital arqueológica de América.
           </p>
 
-          {/* WhatsApp */}
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-whatsapp"
-          >
-            <FaWhatsapp size={22} />
-            Escríbenos por WhatsApp
-          </a>
+          {/* Redes Sociales */}
+          <div className="footer-social">
+
+            {/* WhatsApp */}
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon whatsapp"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href={INSTAGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon instagram"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* TikTok */}
+            <a
+              href={TIKTOK_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon tiktok"
+              aria-label="TikTok"
+            >
+              <FaTiktok />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href={FACEBOOK_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon facebook"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
+
+          </div>
         </div>
 
         {/* Destinos */}
@@ -135,3 +182,4 @@ export default function Footer() {
     </footer>
   );
 }
+

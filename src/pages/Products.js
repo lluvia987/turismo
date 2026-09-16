@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { products } from '../data/content';
+import { BASE_URL_PRODUCTOS } from '../config/cloudinary';
+import { Link } from 'react-router-dom';
 
-export default function PracticalInfo() {
+export default function Products() {
   /*const seasons = [
     { name: 'Temporada Seca', months: 'Abr – Oct', ideal: true, desc: 'La mejor época. Días soleados, noches frías, ideal para trekking y Machu Picchu.' },
     { name: 'Temporada Lluvia', months: 'Nov – Mar', ideal: false, desc: 'Verde intenso, menos turistas. Camino Inca cerrado en febrero.' },
@@ -33,7 +35,7 @@ export default function PracticalInfo() {
       <div ref={productsRef} style={{ marginBottom: '5rem' }}>
         <div className="section-header" style={{ marginBottom: '3rem' }}>
           <p className="section-eyebrow">NUESTRA TIENDA</p>
-          <h2 className="section-title">Lleva un Pedazo de <em>Cusco</em></h2>
+          <h2 className="section-title">Lleva un Pedazo de <em>Nuestra Artesanía</em></h2>
           <p className="section-sub">
             Artesanía auténtica hecha a mano por nuestra comunidad. Cada pieza apoya
             directamente el trabajo de los artesanos locales.
@@ -50,7 +52,7 @@ export default function PracticalInfo() {
             >
               <div className="card-image-wrap">
                 <img
-                  src={p.image}
+                  src={`${BASE_URL_PRODUCTOS}${p.image}`}
                   alt={p.name}
                   className={`card-img ${hoveredProduct === p.id ? 'zoomed' : ''}`}
                   loading="lazy"
@@ -67,7 +69,7 @@ export default function PracticalInfo() {
                     <span className="meta-icon">◈</span> {p.material}
                   </span>
                 </div>
-                <button className="card-btn">Consultar disponibilidad →</button>
+                <Link to={`/productos/${p.id}`} className="card-btn">Ver Detalles →</Link>
               </div>
             </article>
           ))}

@@ -1113,33 +1113,226 @@ img { display: block; width: 100%; }
   border-color: var(--gold);
 }
 
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
 
-
-.footer-whatsapp {
+.social-icon {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-  padding: 0.6rem 1.2rem;
-  background: #25D366; /* verde característico de WhatsApp */
-  color: #fff !important;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(200,134,10,0.25);
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+}
+
+.social-icon.whatsapp:hover {
+  background: #25D366;
+  box-shadow: 0 6px 16px rgba(37,211,102,0.35);
+}
+
+.social-icon.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 6px 16px rgba(214,36,159,0.35);
+}
+
+.social-icon.tiktok:hover {
+  background: #000;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+.social-icon.facebook:hover {
+  background: #1877F2;
+  box-shadow: 0 6px 16px rgba(24,119,242,0.35);
+}
+
+/* ── PRODUCT DETAIL: SIMILARES ── */
+.similar-section {
+  
+}
+.similar-track {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.similar-item {
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.similar-item:hover { transform: translateY(-4px); }
+.similar-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.6rem;
+}
+.similar-name {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+.similar-price {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+
+
+.similar-more {
+  flex: 0 0 auto;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-radius: var(--radius);
-  transition: var(--transition);
+  color: var(--gold);
+  border: 2px dashed var(--gold-pale);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
 }
-.footer-whatsapp:hover {
+
+/* ── PRODUCT DETAIL: PRINCIPAL ── */
+.product-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.product-main-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+.product-main-tag {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.product-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.6rem;
+}
+.product-main-price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+.product-main-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+.product-main-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+.product-main-meta div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.product-main-meta strong {
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+}
+.product-main-meta span:last-child { color: var(--text-mid); }
+
+.product-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  border-color: #25D366;
+}
+.product-whatsapp-btn:hover {
   background: #1ebe5b;
-  transform: translateY(-2px);
+  border-color: #1ebe5b;
   box-shadow: 0 8px 24px rgba(37,211,102,0.35);
 }
-.whatsapp-icon { font-size: 1rem; }
+
+/* ── PRODUCT DETAIL: TAMBIÉN TE PODRÍA INTERESAR ── */
+.also-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.2rem;
+}
+.also-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.also-item:hover { transform: translateY(-4px); }
+.also-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.5rem;
+}
+.also-name {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+.also-price {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 0.15rem;
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-main-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .also-grid { grid-template-columns: repeat(3, 1fr); }
   .practical-grid { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .category-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1197,4 +1390,7 @@ img { display: block; width: 100%; }
   .footer-top { grid-template-columns: 1fr; }
   .tips-grid { grid-template-columns: 1fr; }
   .stats-bar { gap: 1.5rem; }
+  .also-grid { grid-template-columns: repeat(2, 1fr); }
+  .similar-item, .similar-more { width: 120px; }
+  .similar-item img { width: 120px; height: 120px; }
 }
