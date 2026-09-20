@@ -1,16 +1,33 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
-import { products } from '../data/content';
+import { useProducts } from '../hooks/useProducts';
 import { BASE_URL_PRODUCTOS } from '../config/cloudinary';
 
 const WHATSAPP_NUMBER = '51930675547';
 
 export default function ProductDetail() {
   const { id } = useParams();
+  const { products, loading, error } = useProducts();
+
+  if (loading) {
+    return (
+      <section className="section" style={{ textAlign: 'center' }}>
+        <p>Cargando producto...</p>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="section" style={{ textAlign: 'center' }}>
+        <p>Hubo un error cargando el producto.</p>
+      </section>
+    );
+  }
 
   const product = products.find(
-    (p) => String(p.id) === id
+    (p) => String(p.id) === String(id)
   );
 
   if (!product) {
@@ -28,7 +45,7 @@ export default function ProductDetail() {
           className="btn-primary"
           style={{
             marginTop: '1.5rem',
-            display: 'inline-block'
+            display: 'inline-block',
           }}
         >
           Volver a Productos
@@ -51,48 +68,51 @@ export default function ProductDetail() {
 
   const whatsappMsg = `Hola Wiñay Awaq, quisiera consultar acerca del producto "${product.name}". ¿Me podrían decir si sigue disponible y darme más información?`;
 
-  const whatsappLink =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      whatsappMsg
-    )}`;
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    whatsappMsg
+  )}`;
 
   return (
     <>
-      {/* SECCIÓN 1: SIMILARES */}
-      {similares.length > 0 && (
-        <section className="section similar-section">
-          <div
-            className="section-header"
-            style={{
-              marginBottom: '1.5rem',
-              textAlign: 'left'
-            }}
-          >
-            <p className="section-eyebrow">
-              Quizás te interese
-            </p>
+      {/* =========================================
+          SECCIÓN 1: PRODUCTOS SIMILARES
+      ========================================= */}
 
-            <h3
-              className="section-title"
+      {similares.length > 0 && (
+        <section className="title-section">
+          <div className='setion-similar'>
+            <div
+              className="section-header"
               style={{
-                fontSize: 'clamp(1.5rem, 3vw, 2.2rem)'
+                marginBottom: '1.5rem',
+                textAlign: 'left',
               }}
             >
-              Artículos Similares
-            </h3>
-          </div>
-          <div className='similar-more'>
-            <Link
-              to={`/productos?categoria=${encodeURIComponent(
-                product.category
-              )}`}
-              className="similar-more-link"
-            >
-              Ver Más →
-            </Link>
-          </div>
-            
+              <p className="section-eyebrow">
+                Quizás te interese
+              </p>
 
+              <h3
+                className="section-title"
+                style={{
+                  fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+                }}
+              >
+                Artículos Similares
+              </h3>
+            </div>
+
+            <div className="similar-more">
+              <Link
+                to={`/productos?categoria=${encodeURIComponent(
+                  product.category
+                )}`}
+                className="similar-more-link"
+              >
+                Ver Más →
+              </Link>
+            </div>
+          </div>
 
           <div className="similar-track">
             {similares.map((s) => (
@@ -116,16 +136,18 @@ export default function ProductDetail() {
                 </span>
               </Link>
             ))}
-
-            
           </div>
         </section>
       )}
 
-      {/* SECCIÓN 2: PRODUCTO PRINCIPAL */}
+      {/* =========================================
+          SECCIÓN 2: PRODUCTO PRINCIPAL
+      ========================================= */}
+
       <section className="section product-main">
         <div className="product-main-layout">
 
+          {/* Imagen */}
           <div className="product-main-image">
             <img
               src={`${BASE_URL_PRODUCTOS}${product.image}`}
@@ -133,14 +155,19 @@ export default function ProductDetail() {
             />
           </div>
 
+          {/* Información */}
           <div className="product-main-info">
 
-            <span
-              className="product-main-tag"
-              style={{ background: product.tagColor }}
-            >
-              {product.tag}
-            </span>
+            {product.tag && (
+              <span
+                className="product-main-tag"
+                style={{
+                  background: product.tagColor,
+                }}
+              >
+                {product.tag}
+              </span>
+            )}
 
             <h1 className="product-main-title">
               {product.name}
@@ -188,12 +215,17 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      {/* SECCIÓN 3: TAMBIÉN TE PODRÍA INTERESAR */}
+      {/* =========================================
+          SECCIÓN 3: TAMBIÉN TE PODRÍA INTERESAR
+      ========================================= */}
+
       <section className="section also-interest">
 
         <div
           className="section-header"
-          style={{ marginBottom: '2.5rem' }}
+          style={{
+            marginBottom: '2.5rem',
+          }}
         >
           <p className="section-eyebrow">
             Explora Más
@@ -205,6 +237,7 @@ export default function ProductDetail() {
         </div>
 
         <div className="also-grid">
+
           {otrosProductos.map((p) => (
             <Link
               to={`/productos/${p.id}`}
@@ -226,12 +259,13 @@ export default function ProductDetail() {
               </span>
             </Link>
           ))}
+
         </div>
 
         <div
           style={{
             textAlign: 'center',
-            marginTop: '2.5rem'
+            marginTop: '2.5rem',
           }}
         >
           <Link
@@ -240,7 +274,7 @@ export default function ProductDetail() {
             style={{
               background: 'transparent',
               border: '2px solid var(--gold)',
-              color: 'var(--gold)'
+              color: 'var(--gold)',
             }}
           >
             Ver Más →
@@ -251,3 +285,4 @@ export default function ProductDetail() {
     </>
   );
 }
+

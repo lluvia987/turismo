@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { servicios } from '../data/content';
+import { categoryServices } from '../data/content';
 
 export default function ServiceCards() {
-  const needsLoop = servicios.length > 4;
+  const needsLoop = categoryServices.length > 4;
   // Si hay más de 4, duplicamos la lista para crear el efecto de loop infinito sin cortes
-  const trackItems = needsLoop ? [...servicios, ...servicios] : servicios;
+  const trackItems = needsLoop ? [...categoryServices, ...categoryServices] : categoryServices;
 
   return (
     <section className="services-section">
-      <div className="section-head">
-        <p className="section-tag">Servicios</p>
-        <h2>Lo que ofrecemos para ti</h2>
-      </div>
+      
 
       <div className={`services-track-wrap ${needsLoop ? 'is-looping' : ''}`}>
         <div className={`services-track ${needsLoop ? 'animate-scroll' : ''}`}>

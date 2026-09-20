@@ -6,11 +6,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import Experiencias from './pages/Experiences';
 import Servicios from './pages/Services';
 import Productos from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
+import About from './pages/About';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,10 +26,10 @@ export default function App() {
       <Navbar scrolled={scrolled} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/destinos" element={<Experiencias />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/productos/:id" element={<ProductDetail />} />
+        <Route path="/nosotros" element={<About />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
       <Footer />
