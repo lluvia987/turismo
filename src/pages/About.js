@@ -20,17 +20,17 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2006', title: 'Nuestros Inicios', text: 'Un grupo de familias de Chinchero se une para compartir su cultura textil con visitantes del mundo.' },
-  { year: '2012', title: 'Primeras Alianzas', text: 'Comenzamos a colaborar con operadores turísticos locales para llegar a más viajeros.' },
-  { year: '2018', title: 'Crecimiento Comunitario', text: 'Ampliamos nuestro equipo, incorporando a más artesanas y guías de la región.' },
+  { year: '2008', title: 'Nuestros Inicios', text: 'Un grupo de familias de Chinchero se une para compartir su cultura textil con visitantes del mundo.' },
+  { year: '2010', title: 'Primeras Alianzas', text: 'Comenzamos a colaborar con operadores turísticos locales para llegar a más viajeros.' },
+  { year: '2016', title: 'Crecimiento Comunitario', text: 'Ampliamos nuestro equipo, incorporando a más artesanas y personas que aporten conocimiento a la organización' },
   { year: '2024', title: 'Wiñay Awaq Hoy', text: 'Más de 500 viajeros nos han visitado, llevándose una experiencia auténtica del Valle Sagrado.' },
 ];
 
 const team = [
-  { name: 'Julio Callañaupa', role: 'Fundadora & Artesano', image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&q=80' },
-  { name: 'Liberata Sallo', role: 'Maestra Artesana', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80' },
-  { name: 'Libia Sallo', role: 'Tejedora', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=80' },
-  { name: 'Cesar Callañaupa', role: 'Organizador', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80' },
+  { name: 'Julio Callañaupa', role: 'Fundadora & Artesano', image: 'perfiljulio.png' },
+  { name: 'Liberata Sallo', role: 'Maestra Artesana', image: 'perfilliberata.png' },
+  { name: 'Libia Sallo', role: 'Tejedora', image: '' },
+  { name: 'Cesar Callañaupa', role: 'Organizador', image: '' },
 ];
 
 function useReveal(threshold = 0.15) {

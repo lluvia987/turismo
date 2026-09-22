@@ -88,9 +88,9 @@ export const categoryServices = [
   },
   {
     icon: '🎭',
-    title: 'Demostración del Proceso Textíl',
+    title: 'Aventura y Naturaleza',
     desc: 'Inti Raymi, Corpus Christi y ceremonias ancestrales',
-    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80',
+    image: 'service02.jpg',
   },
   {
     icon: '🏺',
