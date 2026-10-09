@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_URL_NOSOTROS } from '../config/cloudinary';
+import { useGalery } from '../hooks/useGalery';
+import '../styles/About.css';
+
+
 
 const values = [
   {
@@ -45,6 +50,16 @@ function useReveal(threshold = 0.15) {
 }
 
 export default function About() {
+  const { photos, loading, error } = useGalery();
+
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [galleryRef, galleryVisible] = useReveal(0.1);
+
+  const openLightbox = (i) => setLightboxIndex(i);
+  const closeLightbox = () => setLightboxIndex(null);
+  const nextPhoto = (e) => { e.stopPropagation(); setLightboxIndex((i) => (i + 1) % photos.length); };
+  const prevPhoto = (e) => { e.stopPropagation(); setLightboxIndex((i) => (i - 1 + photos.length) % photos.length); };
+
   const [valuesRef, valuesVisible] = useReveal();
   const [timelineRef, timelineVisible] = useReveal(0.1);
   const [teamRef, teamVisible] = useReveal();
@@ -60,7 +75,7 @@ export default function About() {
             Somos <span className="accent">Wiñay Awaq</span>
           </h1>
           <p className="about-hero-sub">
-            Guardianes del tejido ancestral, guías de tu experiencia en el corazón del Valle Sagrado.
+            Conocedores del tejido ancestral, guiamos tu experiencia en el corazón del Valle Sagrado.
           </p>
         </div>
       </section>
@@ -70,7 +85,7 @@ export default function About() {
         <div className="about-intro-layout">
           <div className="about-intro-image">
             <img
-              src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=900&q=85"
+              src="about.jpeg"
               alt="Comunidad de Wiñay Awaq"
             />
             <div className="about-intro-badge">
@@ -120,6 +135,55 @@ export default function About() {
           ))}
         </div>
       </section>
+
+      {/* ── GALERÍA DEL PROCESO ── */}
+      <section className="section about-gallery" ref={galleryRef}>
+        <div className="section-header">
+          <p className="section-eyebrow">DETRÁS DEL TEJIDO</p>
+          <h2 className="section-title">Nuestro <em>Proceso Artesanal</em></h2>
+          <p className="section-sub" style={{ margin: '0 auto' }}>
+            Cada pieza nace de un proceso cuidado a mano, paso a paso, tal como lo han hecho nuestras familias por generaciones.
+          </p>
+        </div>
+        <div className={`gallery-mosaic ${galleryVisible ? 'visible' : ''}`}>
+          {loading && <p style={{ textAlign: 'center' }}>Cargando imagenes...</p>}
+          {error && <p style={{ textAlign: 'center', color: 'red' }}>Ocurrió un error al cargar los productos.</p>}
+
+          {!loading && !error && (
+            <>
+            {photos.map((p, i) => (
+            <div
+              key={i}
+              className={`gallery-item gallery-${p.size}`}
+              style={{ animationDelay: `${i * 0.08}s` }}
+              onClick={() => openLightbox(i)}
+            >
+              <img src={`${BASE_URL_NOSOTROS}${p.image}`} alt={p.alt} loading="lazy" />
+              <div className="gallery-item-overlay">
+                <span className="gallery-zoom-icon">⊕</span>
+              </div>
+            </div>
+            ))}
+          </>
+        )}                   
+        </div>
+      </section>
+
+      {/* ── LIGHTBOX ── */}
+      {lightboxIndex !== null && (
+        <div className="lightbox" onClick={closeLightbox}>
+          <button className="lightbox-close" onClick={closeLightbox}>✕</button>
+          <button className="lightbox-nav lightbox-prev" onClick={prevPhoto}>‹</button>
+          <img
+            src={`${BASE_URL_NOSOTROS}${photos[lightboxIndex].image}`}
+            alt={photos[lightboxIndex].alt}
+            className="lightbox-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="lightbox-nav lightbox-next" onClick={nextPhoto}>›</button>
+          <p className="lightbox-caption">{photos[lightboxIndex].alt}</p>
+        </div>
+      )}
 
       {/* ── LÍNEA DE TIEMPO ── */}
       <section className="section about-timeline-section" ref={timelineRef}>

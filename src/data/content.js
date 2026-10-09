@@ -78,7 +78,7 @@ export const categoryServices = [
     icon: '🏔️',
     title: 'Turismo Vivencial',
     desc: 'Visitas a centros arqueologicos y caminatas',
-    image: '/service01.jpg',
+    image: '/service01.jpeg',
   },
   {
     icon: '🍽️',
@@ -99,8 +99,6 @@ export const categoryServices = [
     image: '/service04.jpg',
   },
 ];
-
-
 
 export const materials = [
   {

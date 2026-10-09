@@ -216,7 +216,7 @@ export default function Products() {
         )}
       </section>
       {/* ── CÓMO FUNCIONA ── */}
-      <section className="section how-it-works">
+      <section className="section pd-how-it-works">
         <div className="section-header">
           <p className="section-eyebrow">PROCESO SIMPLE</p>
           <h2 className="section-title">¿Cómo <em>Funciona</em>?</h2>
@@ -224,26 +224,26 @@ export default function Products() {
             No vendemos por catálogo online — cada compra es una conversación personal contigo.
           </p>
         </div>
-        <div className="steps-grid">
+        <div className="pd-steps-grid">
           {steps.map((s, i) => (
-            <div key={i} className="step-card">
-              <span className="step-num">{s.num}</span>
-              <h3 className="step-title">{s.title}</h3>
-              <p className="step-text">{s.text}</p>
+            <div key={i} className="pd-step-card">
+              <span className="pd-step-num">{s.num}</span>
+              <h3 className="pd-step-title">{s.title}</h3>
+              <p className="pd-step-text">{s.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── TESTIMONIOS ── */}
-      <section className="section testimonials-section">
+      <section className="section pd-testimonials-section">
         <div className="section-header">
           <p className="section-eyebrow">LO QUE DICEN</p>
           <h2 className="section-title">Historias de Nuestros <em>Clientes</em></h2>
         </div>
-        <div className="testimonials-grid">
+        <div className="pd-testimonials-grid">
           {testimonials.map((t, i) => (
-            <div key={i} className="testimonial-card">
+            <div key={i} className="pd-testimonial-card">
               <span className="testimonial-quote-mark">"</span>
               <p className="testimonial-text">{t.text}</p>
               <div className="testimonial-author">

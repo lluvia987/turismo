@@ -10,12 +10,6 @@ const WHATSAPP_NUMBER = '51930675547';
 const WHATSAPP_MSG = 'Hola Wiñay Awaq, quisiera más información sobre sus servicios y experiencias.';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 
-const trustStats = [
-  { value: '20+', label: 'Experiencias Únicas' },
-  { value: '100%', label: 'Guías Locales' },
-  { value: '18+', label: 'Años de Trayectoria' },
-  { value: '5★', label: 'Grupos Reducidos' },
-];
 
 const steps = [
   { num: '01', title: 'Elige tu Experiencia', text: 'Explora nuestras categorías y encuentra la actividad que más te llame la atención.' },
@@ -55,7 +49,6 @@ function useReveal(threshold = 0.1) {
 export default function Services() {
   const { destinos: servicios, loading, error } = useServices();
 
-  const [statsRef, statsVisible] = useReveal(0.3);
   const [bentoRef, bentoVisible] = useReveal(0.15);
   const [rowsRef, rowsVisible] = useReveal(0.05);
   const [stepsRef, stepsVisible] = useReveal(0.2);
@@ -83,17 +76,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── FRANJA DE CONFIANZA ── */}
-      <section className="services-trust" ref={statsRef}>
-        <div className={`trust-grid ${statsVisible ? 'visible' : ''}`}>
-          {trustStats.map((s, i) => (
-            <div key={i} className="trust-item" style={{ animationDelay: `${i * 0.1}s` }}>
-              <span className="trust-value">{s.value}</span>
-              <span className="trust-label">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ── BENTO GRID DE CATEGORÍAS ── */}
       <section className="section categories-bento" ref={bentoRef}>
